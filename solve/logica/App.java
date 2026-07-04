@@ -2,6 +2,7 @@ package logica;
 
 import java.util.Scanner;
 import java.io.*;
+import gui.VentanaPrincipal;
 public class App {
 	
 	public static ISistema sistema = SistemaImpl.getInstance();
@@ -9,6 +10,8 @@ public class App {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		cargarSobres();
+		VentanaPrincipal ventana = new VentanaPrincipal();
+		ventana.setVisible(true);
 		}
 
 
@@ -25,5 +28,6 @@ public class App {
 		sarch.close();
 		
 	}
+	
 
 }

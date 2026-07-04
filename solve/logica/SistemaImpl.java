@@ -30,7 +30,7 @@ public class SistemaImpl implements ISistema {
 
 	@Override
 	public void agregarCarta() {
-		// TODO Auto-generated method stub
+		// asd
 		
 	}
 
@@ -45,7 +45,39 @@ public class SistemaImpl implements ISistema {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public ArrayList<Carta> getCartas() {
+        return this.cartas;
+    }
 	
-	
+	public void setStrategy(IStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void ejecutarOrdenamiento() {
+        if (this.strategy != null) {
+            this.strategy.ordenar(cartas);
+        }
+    }
+
+    public void agregarCartaDirecto(Carta nueva) {
+    	cartas.add(nueva);
+    	guardarEnArchivo();
+    }
+
+    public void eliminarCartaDirecto(Carta c) {
+    	cartas.remove(c);
+    	guardarEnArchivo();
+    }
+
+    public void guardarEnArchivo() {
+    	try (java.io.PrintWriter pw = new java.io.PrintWriter(new java.io.FileWriter("sobres.txt"))) {
+    		for (Carta c : cartas) {
+    			pw.println(c.guardar());
+    		}
+    	} catch (java.io.IOException e) {
+    		System.err.println("Error al guardar archivo: " + e.getMessage());
+    	}
+    }
 	
 }
