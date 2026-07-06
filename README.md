@@ -1,3 +1,6 @@
+<div align="right">
+  <img width="480" height="342" alt="Running-Pikachu-GIF" src="https://github.com/user-attachments/assets/a68cadd8-da04-4543-bcbf-e3ae79f9bfe1" />
+</div>
 # Taller 4: Pokémon TCG - Gestor de Colección 
 
 ##  Descripción del proyecto
